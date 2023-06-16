@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="flex justify-between items-center px-[2.5vw] py-[1.5vh] fixed top-0 bg-black w-full">
+          <p className="flex-[1]"><b>Logo</b></p>
+          <ul className="flex items-center justify-between gap-3 flex-[1] text-xs">
+            <li><Link href={"/"}>Home</Link></li>
+            <li>Best</li>
+            <li><Link href={"/about"}>About</Link></li>
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }
