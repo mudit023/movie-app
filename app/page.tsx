@@ -4,11 +4,11 @@ import Movie from "./Movie";
 
 type movieResult = {
   title: string;
-  overview: string;
+  // overview: string;
   poster_path: string;
   vote_average: number;
-  release_date: string;
-  id: number;
+  // release_date: string;
+  id: string;
 };
 
 export default async function Home() {
@@ -19,16 +19,17 @@ export default async function Home() {
   // console.log(res.results);
 
   return (
-    <main className="mt-16 md:px-10 px-5">
+    <main className="my-16 md:px-10 px-5">
+      <h1 className="text-2xl font-semi-bold">Trending</h1>
       <div className="grid gap-16 grid-cols-fluid">
         {res?.results?.map((item: movieResult, idx: number) => {
           return (
             <Movie
               title={item?.title}
-              about={item?.overview}
+              // about={item?.overview}
               poster_path={item?.poster_path}
               rating={item?.vote_average}
-              release_date={item?.release_date}
+              // release_date={item?.release_date}
               key={idx}
               id={item?.id}
             />
