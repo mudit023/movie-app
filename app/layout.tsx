@@ -21,7 +21,9 @@ export default function RootLayout({
       >
         <nav className="flex justify-between items-center px-[2.5vw] py-[1.5vh] fixed top-0 bg-[#050505] w-full text-white">
           <p className="flex-[1]">
-            <b>Logo</b>
+            <Link href={"/"}>
+              <b>The Movie</b>
+            </Link>
           </p>
           <ul className="flex items-center justify-between gap-3 flex-[1] text-xs">
             <li>
