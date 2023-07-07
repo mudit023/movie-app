@@ -1,13 +1,9 @@
-// import Image from 'next/image'
-
 import Movie from "./Movie";
 
-type movieResult = {
+export type movieProps = {
   title: string;
-  // overview: string;
   poster_path: string;
   vote_average: number;
-  // release_date: string;
   id: string;
 };
 
@@ -16,20 +12,17 @@ export default async function Home() {
     `https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${process.env.API_KEY}`
   );
   const res = await data.json();
-  // console.log(res.results);
 
   return (
     <main className="my-16 md:px-10 px-5">
       <h1 className="text-2xl font-semi-bold">Trending</h1>
       <div className="grid gap-16 grid-cols-fluid">
-        {res?.results?.map((item: movieResult, idx: number) => {
+        {res?.results?.map((item: movieProps, idx: number) => {
           return (
             <Movie
               title={item?.title}
-              // about={item?.overview}
               poster_path={item?.poster_path}
-              rating={item?.vote_average}
-              // release_date={item?.release_date}
+              vote_average={item?.vote_average}
               key={idx}
               id={item?.id}
             />
