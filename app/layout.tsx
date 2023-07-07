@@ -27,7 +27,9 @@ export default function RootLayout({
             <li>
               <Link href={"/"}>Home</Link>
             </li>
-            <li>Best</li>
+            <li>
+              <Link href={"/best"}>Top Rated</Link>
+            </li>
             <li>
               <Link href={"/about"}>About</Link>
             </li>
