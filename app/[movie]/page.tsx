@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-export async function generateStaticParams() {
-  const data = await fetch(
-    `https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${process.env.API_KEY}`
-  );
-  const res = await data.json();
-  return res.results.map((movie: { id: number }) => ({
-    movie: movie.id.toString(),
-  }));
-}
+// export async function generateStaticParams() {
+//   const data = await fetch(
+//     `https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${process.env.API_KEY}`
+//   );
+//   const res = await data.json();
+//   return res.results.map((movie: { id: number }) => ({
+//     movie: movie.id.toString(),
+//   }));
+// }
 
 async function MovieDetail({ params }: any) {
   const movie_id = params.movie;
