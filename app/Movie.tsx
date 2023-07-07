@@ -13,7 +13,7 @@ interface movieProps {
 function Movie(props: movieProps) {
   const IMAGE_PATH: string = `https://image.tmdb.org/t/p/original${props.poster_path}`;
   return (
-    <div className="px-4 py-3 hover:shadow-md">
+    <div className="px-4 py-3 md:hover:shadow-md">
       {/* <h1 className="text-xl font-semibold h-8 overflow-y-hidden">
         {props.title}
       </h1> */}
