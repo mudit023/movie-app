@@ -14,7 +14,7 @@ export default async function Home() {
   const res = await data.json();
 
   return (
-    <main className="my-16 md:px-10 px-5">
+    <main className="my-16 md:px-10 px-5 w-full">
       <h1 className="text-2xl font-semi-bold">Trending</h1>
       <div className="grid gap-16 grid-cols-fluid">
         {res?.results?.map((item: movieProps, idx: number) => {
